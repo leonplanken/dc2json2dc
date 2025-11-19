@@ -195,12 +195,13 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!--
 ### Top contributors:
 
 <a href="https://github.com/leonplanken/dc2json2dc/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=leonplanken/dc2json2dc" alt="contrib.rocks image" />
 </a>
-
+-->
 
 
 <!-- LICENSE -->
@@ -236,8 +237,10 @@ Project Link: [https://github.com/leonplanken/dc2json2dc](https://github.com/leo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!--
 [contributors-shield]: https://img.shields.io/github/contributors/leonplanken/dc2json2dc.svg?style=for-the-badge
 [contributors-url]: https://github.com/leonplanken/dc2json2dc/graphs/contributors
+-->
 [forks-shield]: https://img.shields.io/github/forks/leonplanken/dc2json2dc.svg?style=for-the-badge
 [forks-url]: https://github.com/leonplanken/dc2json2dc/network/members
 [stars-shield]: https://img.shields.io/github/stars/leonplanken/dc2json2dc.svg?style=for-the-badge
