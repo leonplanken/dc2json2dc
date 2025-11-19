@@ -62,9 +62,11 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <!--
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
+      -->
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -94,6 +96,7 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!--
 
 ### Built With
 
@@ -107,7 +110,7 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 * [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 
 
 <!-- GETTING STARTED -->
@@ -116,6 +119,7 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
+<!--
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
@@ -147,6 +151,7 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+-->
 
 
 <!-- USAGE EXAMPLES -->
@@ -212,7 +217,7 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 
 Your Name - [@oliphaunt.bsky.social](https://bsky.app/profile/oliphaunt.bsky.social) - projects@oliphaunt.nl
 
-Project Link: [https://github.com/leonplanken/dc2json2dc](https://github.com/leonplanken/repo_name)
+Project Link: [https://github.com/leonplanken/dc2json2dc](https://github.com/leonplanken/dc2json2dc)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -245,6 +250,7 @@ Project Link: [https://github.com/leonplanken/dc2json2dc](https://github.com/leo
 [linkedin-url]: https://www.linkedin.com/in/leonplanken
 [product-screenshot]: images/screenshot.png
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
+<!--
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -261,3 +267,4 @@ Project Link: [https://github.com/leonplanken/dc2json2dc](https://github.com/leo
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+-->
