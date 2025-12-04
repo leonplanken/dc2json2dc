@@ -1,7 +1,7 @@
 import dataclasses
 import json
 import types
-from typing import Callable, Iterable
+from typing import Callable, Iterable, Mapping
 
 from typing_extensions import override
 
@@ -23,13 +23,16 @@ class JSONDataclassEncoder(json.JSONEncoder):
 
     @override
     def default(self, obj):
-        if not dataclasses.is_dataclass(obj):
-            return super().default(obj)
-
-        cls_flds = [f for f in dataclasses.fields(obj) if f.init]
-        result = {"__class__": obj.__class__.__name__}
-        result.update((f.name, getattr(obj, f.name)) for f in cls_flds)
-        return result
+        if dataclasses.is_dataclass(obj):
+            cls_flds = [f for f in dataclasses.fields(obj) if f.init]
+            result = {"__class__": obj.__class__.__name__}
+            result.update((f.name, getattr(obj, f.name)) for f in cls_flds)
+            return result
+        if isinstance(obj, Mapping):
+            return dict(obj.items())
+        if isinstance(obj, Iterable):
+            return list(iter(obj))
+        return super().default(obj)
 
 
 class AbstractJSONDataclassDecoder(json.JSONDecoder):
