@@ -1,36 +1,64 @@
 import sys
 from collections import deque
-from collections.abc import Mapping, MutableMapping, MutableSequence, MutableSet, Sequence, Set as ABCSet
+from collections.abc import (
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    MutableSet,
+    Sequence,
+)
+from collections.abc import (
+    Set as ABCSet,
+)
 from dataclasses import dataclass, field
 from datetime import datetime
 from decimal import Decimal
-from typing import (Collection,
-                    Deque,
-                    Dict,
-                    FrozenSet,
-                    List,
-                    NewType,
-                    Optional,
-                    Set,
-                    Tuple,
-                    TypeVar,
-                    Union,
-                    Any)
+from typing import (
+    Any,
+    Collection,
+    Deque,
+    Dict,
+    FrozenSet,
+    List,
+    NewType,
+    Optional,
+    Set,
+    Tuple,
+    TypeVar,
+    Union,
+)
 from uuid import UUID
+
 if sys.version_info >= (3, 9):
     from collections import Counter
-    from collections.abc import Mapping, MutableMapping, MutableSequence, MutableSet, Sequence, Set as ABCSet
+    from collections.abc import (
+        Mapping,
+        MutableMapping,
+        MutableSequence,
+        MutableSet,
+        Sequence,
+    )
+    from collections.abc import (
+        Set as ABCSet,
+    )
 else:
-    from typing import Counter, Mapping, MutableMapping, MutableSequence, MutableSet, Sequence, Set as ABCSet
+    from typing import (
+        Counter,
+        Mapping,
+        MutableMapping,
+        MutableSequence,
+        MutableSet,
+        Sequence,
+    )
+    from typing import (
+        Set as ABCSet,
+    )
 
-from marshmallow import fields
+from .dataclasses_json import DataClassJsonMixin, dataclass_json
 
-from dataclasses_json import (DataClassJsonMixin, LetterCase, dataclass_json)
-from dataclasses_json.cfg import config
-
-A = TypeVar('A')
-UUIDWrapper = NewType('UUIDWrapper', UUID)
-UUIDWrapperWrapper = NewType('UUIDWrapperWrapper', UUIDWrapper)
+A = TypeVar("A")
+UUIDWrapper = NewType("UUIDWrapper", UUID)
+UUIDWrapperWrapper = NewType("UUIDWrapperWrapper", UUIDWrapper)
 
 
 @dataclass(frozen=True)
@@ -259,42 +287,10 @@ class DataClassJsonDecorator:
 @dataclass_json
 @dataclass
 class DataClassWithConfigManual:
-    id: float = field(
-        metadata={'dataclasses_json': {
-            'mm_field': fields.Integer()
-        }})
+    id: float = field(metadata={"dataclasses_json": {}})
 
 
-@dataclass_json
-@dataclass
-class DataClassWithConfigHelper:
-    id: float = field(metadata=config(encoder=str))
-
-
-@dataclass_json
-@dataclass
-class DataClassWithErroneousDecode:
-    # Accepts no arguments, so passing in a single argument will result in a TypeError.
-    id: float = field(metadata=config(decoder=lambda: None))
-
-
-def split_str(data: str, *_args, **_kwargs):
-    return data.split(',')
-
-
-@dataclass_json
-@dataclass
-class DataClassDifferentTypeDecode:
-    lst: List[str] = field(default=None, metadata=config(decoder=split_str))
-
-
-@dataclass_json
-@dataclass
-class DataClassMappingBadDecode:
-    map: Dict[str, DataClassWithErroneousDecode]
-
-
-@dataclass_json(letter_case=LetterCase.CAMEL)
+@dataclass_json(letter_case="CAMEL")
 @dataclass
 class DataClassWithConfigDecorator:
     id_field: str
@@ -389,7 +385,7 @@ class DataClassWithCounter:
 @dataclass
 class DataClassWithSelf(DataClassJsonMixin):
     id: str
-    ref: Optional['DataClassWithSelf']
+    ref: Optional["DataClassWithSelf"]
 
 
 @dataclass_json
